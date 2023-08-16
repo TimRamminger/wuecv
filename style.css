@@ -104,11 +104,11 @@ body {
     margin: 0;
 }
 
-.game a {
+/*.game a {
     width: 75px;
     height: 30px;
     margin-left:125px;
-}
+}*/
 
 .game header {
     display: inline-flex;
