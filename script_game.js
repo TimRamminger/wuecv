@@ -2,6 +2,7 @@ var players = JSON.parse(localStorage.getItem("players")) || [];
 var tasksNoPlayer = [];
 var tasks1Player = [];
 var cacheTasksNoPlayer = []
+var radioButtons = [];
 var count = 0;
 var drunkCounter = 0;
 var current = -1;
@@ -39,7 +40,7 @@ var data = {
       },
       {
         "task":"Jeder der nicht an einer Uni ist, muss exen",
-        "toDrink":1
+        "toDrink":10
       }
     ],
     "tasks1Player": [
@@ -144,52 +145,21 @@ function updateDrunkCounter() {
 function showRadioButtons() {
     var ul = document.createElement("ul");
 
-    ul.style.padding = "0";
-    ul.style.listStyleType = "none";
 
-    for (var i = 0;i<10;i++) {
+    for (var i = 0;i<players.length;i++) {
         var li = document.createElement("li");
         var input = document.createElement("input");
         var label = document.createElement("label");
        
-
-        if(i==0) input.checked = true;
-
-        li.style.float = "left";
-        li.style.width = "50px";
-        li.style.height = "40px";
-        li.style.position = "relative";
-
-        input.style.display = "block";
-        input.style.position = "absolute";
-        input.style.top = "0";
-        input.style.left = "0";
-        input.style.right = "0";
-        input.style.bottom = "0";
-        input.style.opacity = "0";
-        input.style.zIndex = "100";
-
         input.type = "radio";
         input.value = i.toString();
-        input.setAttribute("onclick", "changeRadioButton(this)");
-
-        console.log(input.checked);
-        if(input.checked) {
-          console.log("lol");
-          input.style.backgroundColor = "red";
-          label.style.backgroundColor = "red";
+        if(i==cacheTasksNoPlayer[current][2]) {
+          label.style.backgroundColor = "rgba(71, 130, 197, 0.774)";
         }
+
+        radioButtons[radioButtons.length] = label;
         
-        label.style.display = "block";
-        label.style.position = "absolute";
-        label.style.top = "0";
-        label.style.left = "0";
-        label.style.right = "0";
-        label.style.bottom = "0";
-        label.style.padding = "5px";
-        label.style.border = "1px solid white";
-        label.style.zIndex = "90";
-        label.style.color = "white";
+        input.setAttribute("onclick", "changeRadioButton(this)");
 
         var text = document.createTextNode(i.toString());
 
@@ -197,6 +167,8 @@ function showRadioButtons() {
 
         li.appendChild(input);
         li.appendChild(label);
+
+        
 
         ul.appendChild(li);
     }
@@ -208,8 +180,14 @@ function changeRadioButton(radioButton) {
     console.log("befor"+cacheTasksNoPlayer[current][2]);
     drunkCounter -= cacheTasksNoPlayer[current][1]*cacheTasksNoPlayer[current][2];
     cacheTasksNoPlayer[current][2] = radioButton.value;
-   drunkCounter += cacheTasksNoPlayer[current][1]*cacheTasksNoPlayer[current][2];
+    drunkCounter += cacheTasksNoPlayer[current][1]*cacheTasksNoPlayer[current][2];
     console.log("after"+cacheTasksNoPlayer[current][2]);
+
+    for(var i = 0;i<radioButtons.length;i++) {
+      radioButtons[i].style.backgroundColor = "transparent";
+    }
+
+    radioButton.nextSibling.style.backgroundColor ="rgba(71, 130, 197, 0.774)";
 
     updateDrunkCounter();
 }

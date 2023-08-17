@@ -119,6 +119,55 @@ body {
     margin-top: 10%;
 }
 
+.game footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.game footer ul {
+    padding: 0;
+    /*list-style-type: none;*/
+}
+
+.game footer li {
+    float: left;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.game footer li input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 100;
+}
+
+.game footer label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid white;
+    z-index: 90;
+    color: white;
+    
+}
+
+.game footer label, .game footer input {
+    border-radius: 12px;
+    padding-top: 10px;
+    font-size: 25px;
+}
+
 
 /*dice*/
 
@@ -218,55 +267,7 @@ body {
     border-radius: 10px;
 }
 
-.donate-now {
-    list-style-type: none;
-    margin: 25px 0 0 0;
-    padding: 0;
-  }
-  
-  .donate-now li {
-    float: left;
-    margin: 0 5px 0 0;
-    width: 100px;
-    height: 40px;
-    position: relative;
-  }
-  
-  .donate-now label,
-  .donate-now input {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-  .donate-now input[type="radio"] {
-    opacity: 0.01;
-    z-index: 100;
-  }
-  
-  .donate-now input[type="radio"]:checked+label{
-    background: yellow;
-  }
-  
-  .donate-now label {
-    padding: 5px;
-    border: 1px solid #CCC;
-    cursor: pointer;
-    z-index: 90;
-    color:whi
-  }
-  
-  .donate-now label:hover {
-    background: #DDD;
-  }
 
 
 
 
-.game footer {
-    position: fixed;
-    bottom: 0;
-}
