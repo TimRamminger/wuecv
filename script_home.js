@@ -46,7 +46,8 @@ function showElements(i) {
         var button = document.createElement("button");
 
         div.style.display = "flex";
-        div.style.margin = "5px";    
+        div.style.margin = "5px"; 
+        div.style.width = "max-content";   
 
         h3.style.color = "rgb(209, 179, 42)";
         h3.style.margin = "0px";

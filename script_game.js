@@ -194,7 +194,7 @@ function changeRadioButton(radioButton) {
 
 
 function removeText(element) {
-    element.childNodes[2].childNodes[3].childNodes[3].childNodes[1].remove();
+    element.childNodes[2].childNodes[3].childNodes[5].childNodes[1].remove();
 }
 
 function removeRadioButtons(element) {
