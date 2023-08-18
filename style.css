@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('img/wuerfel/menu.png');
+    background-image: url('img/wuerfel/background_main.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -93,6 +93,13 @@ body {
 .game {
     background-color: rgb(146, 189, 214);
     text-align: center;
+}
+
+.game main .task {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0px;
+    font-size: 35px;
 }
  
 /*.game header div {

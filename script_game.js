@@ -3,6 +3,7 @@ var tasksNoPlayer = [];
 var tasks1Player = [];
 var cacheTasksNoPlayer = []
 var radioButtons = [];
+var multiplier = 1;
 var count = 0;
 var drunkCounter = 0;
 var current = -1;
@@ -15,7 +16,7 @@ var data = {
           "toDrink":1
       },
       {
-        "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss 3 Schlücke trinken",
+        "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss § Schlücke trinken",
         "toDrink":3
       },
       {
@@ -27,11 +28,11 @@ var data = {
         "toDrink":1
       },
       {
-        "task":"Jeder der schonmal seine Schuhe verloren hat muss 3 Schlücke trinken",
+        "task":"Jeder der schonmal seine Schuhe verloren hat muss § Schlücke trinken",
         "toDrink":3
       },
       {
-        "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss 3 Schlücke trinken",
+        "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss § Schlücke trinken",
         "toDrink":3
       },
       {
@@ -41,7 +42,11 @@ var data = {
       {
         "task":"Jeder der nicht an einer Uni ist, muss exen",
         "toDrink":10
-      }
+      },
+      {
+        "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss § Schlücke trinken",
+        "toDrink":3
+      },
     ],
     "tasks1Player": [
       {
@@ -97,7 +102,7 @@ function loadJson() {
 }
 
 function onLoad() {
-    loadJson();
+    //loadJson();
     tasksNoPlayer = data.tasksNoPlayer;
     tasks1Player = data.tasks1Player;
     generateTask();
@@ -109,12 +114,7 @@ function showText() {
     var playerText;
     var taskText;
 
-
-
     
-    div.style.color = "rgb(209, 179, 42)";
-    div.style.margin = "0px";
-    div.style.fontSize = "35px";
 
 
     if(cacheTasksNoPlayer[current].length==2) {
@@ -249,6 +249,10 @@ function generateTask() {
         var element = getRandom(0,tasks1Player.length-1);
         tmp[0] = players[getRandom(0,players.length-1)];
         tmp[1] = tasks1Player[element].task;
+        if(tmp[1].includes("§")) {
+          console.log("lul");
+          tmp[1] = tmp[1].replace("§", tasks1Player.toDrink.toString());
+        }
         cacheTasksNoPlayer[current] = tmp;
         drunkCounter += tasks1Player[element].toDrink;
     }
@@ -256,6 +260,13 @@ function generateTask() {
         var tmp = [];
         var element = getRandom(0,tasksNoPlayer.length-1);
         tmp[0] = tasksNoPlayer[element].task;
+        console.log(tmp[0]);
+        if(tmp[0].includes("§")) {
+          console.log("haha");
+          
+          tmp[0] = tmp[0].replace("§", tasksNoPlayer[element].toDrink.toString());
+          console.log(tmp[0]);
+        }
         tmp[1] = tasksNoPlayer[element].toDrink;
         tmp[2] = 0;
         cacheTasksNoPlayer[current] = tmp;
@@ -264,6 +275,8 @@ function generateTask() {
     console.log("cache");
     console.log(cacheTasksNoPlayer);
 }
+
+
 
 
 function getRandom(low,high) {
