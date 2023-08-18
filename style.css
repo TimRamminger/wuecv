@@ -31,7 +31,6 @@
 .index h1 {
     font-size: 60px;
     color: rgb(201, 145, 73);
-
 }
 
 .index .main {
@@ -46,7 +45,7 @@
     position: relative;
     left: 20%;
     width: 200px;
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    text-shadow: -2px -2px 0 #720015, 2px -2px 0 #720015, -2px 2px 0 #720015, 2px 2px 0 #720015;
 }
 
 
@@ -91,7 +90,7 @@
 
 
 .game {
-    background-color: rgb(146, 189, 214);
+    /*background-color: rgb(146, 189, 214);*/
     text-align: center;
     background-image: url('img/wuerfel/hintergrund_new_2.png');
     background-repeat: no-repeat;
@@ -103,34 +102,34 @@
 
 .game main .task {
     font-family: 'Roboto', sans-serif;
-    
     color: white;
     margin: 0px;
     font-size: 35px;
+    margin: auto;
+    width: 90%;
 }
 
 .game header {
-    top: 35px;
-    display: flex;
+    top: 0;
     justify-content: center;
     align-items: center;
-    position: relative;
+    margin-bottom: 100px;
+    height: 100px;
+    user-select: none;
 }
 
  
 .game header .score {
     position: absolute;
-    right: 0;
+    right: 8%;
+    top: 1.5%;
 }
 
 .game header .score .scoreLabel {
-    width: 80px;
+    width: 90px;
 }
 
 .game header div .scoreCount {
-    position: relative;
-    text-align: left;
-    left: 15px;
     color:white;
     font-family: 'Cinzel', serif;
     font-size: 35px;
@@ -139,18 +138,22 @@
 
 .game header a {
     position: absolute;
-    left: 10px;
-
+    left: 5%;
+    top: 3%;
+    user-select: none;
 }
 
+
 .game header a img {
-    width: 120px;
+    width: 115px;
+    height: 55px;
 }
 
 
 .game main {
     align-items: center;
-    margin-top: 60%;
+    /*margin-top: 60%;*/
+    text-align: center;
 }
  
 
@@ -264,6 +267,12 @@
 .chooser {
     text-align: center;
     margin: 0;
+    background-image: url('img/wuerfel/hinergrund_hauptmenu.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overscroll-behavior: contain ;
+    user-select: none;
 }
 
 .chooser header {

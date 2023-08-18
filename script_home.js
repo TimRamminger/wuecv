@@ -49,7 +49,7 @@ function showElements(i) {
         div.style.margin = "5px"; 
         div.style.width = "max-content";   
 
-        h3.style.color = "#720015";
+        h3.style.color = "white";
         h3.style.margin = "0px";
         h3.style.fontSize = "35px";
         
