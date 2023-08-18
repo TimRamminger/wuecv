@@ -137,7 +137,7 @@ function showText() {
 }
 
 function updateDrunkCounter() {
-  document.getElementById("drunk").innerHTML = drunkCounter+ " Schlücke"; 
+  document.getElementById("score").innerHTML = drunkCounter; 
 
   console.log("drunkCounter"+drunkCounter);
 }
@@ -194,7 +194,8 @@ function changeRadioButton(radioButton) {
 
 
 function removeText(element) {
-    element.childNodes[2].childNodes[3].childNodes[5].childNodes[1].remove();
+    //element.childNodes[2].childNodes[3].childNodes[3].childNodes[1].remove();
+    element.childNodes[2].childNodes[3].childNodes[1].childNodes[1].remove();
 }
 
 function removeRadioButtons(element) {
@@ -212,7 +213,7 @@ function onClick(element) {
     else {
         nextTask(element);
     }
-}
+} 
 
 function updateMousePos(evt) {
     mouseX = evt.touches[0].clientX;

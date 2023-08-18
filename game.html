@@ -8,22 +8,23 @@
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Roboto:wght@700&display=swap" rel="stylesheet">    
+
     <title>Trinkspiel</title>
 
     
 </head>
 <body class="game" >
         <header>
-            <a href="index.html">Home</a>
-            
+            <a href="index.html">
+                <img src="img/wuerfel/home_button.png">
+            </a>
+            <div class="score">
+                <img class="scoreLabel" src="img/wuerfel/score.png"></img>
+                <div id="score" class="scoreCount"></div>
+            </div>
         </header>
         <main>
-            <div>
-                <h2>Bereits getrunken:</h2>
-                <h2 id="drunk"></h2>
-            </div>
-            <h1 class="text"> Aufgabe:</h1>
             <div id="task" class="task">
             </div>
             
