@@ -8,6 +8,8 @@ document.addEventListener("devicemotion", test, true);
 
 var x,y,z;
 
+document.getElementById("mainDice").style.height = (window.innerHeight-65).toString()+"px";
+
 
 function handleMotionEvent(event) {
     x = event.acceleration.x;
@@ -60,7 +62,6 @@ function changeAmtDice() {
 
         var div = document.createElement("div");
 
-        div.setAttribute("onclick", "changeDice()");
 
         for(var i = 0;i<imgs.length;i++) {
             div.appendChild(imgs[i]);

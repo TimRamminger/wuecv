@@ -10,7 +10,7 @@ document.addEventListener("touchend", stopTimerCalcGroups);
 
 var circles = [];
 var timerCalcGroups = [];
-const radiusStart = 50;
+const radiusStart = 60;
 const radiusDif = 10;
 var touchesOld;
 var waitAdd = false;

@@ -217,6 +217,9 @@
     background-size: 100% 100%;
     overscroll-behavior: contain ;
     user-select: none;
+    margin-bottom: 0;
+    margin-top: 0;
+
 }
 
 
@@ -229,7 +232,7 @@
 
 
 .dice main div {
-    /*margin-top: 50%;*/
+    padding-top: 70%;
 }
 
 .dice img {
@@ -239,8 +242,7 @@
 
 .dice header {
     top: 0;
-    margin-bottom: 55%;
-    height: 100px;
+    height: 65px;
 }
 
 .dice header a {
