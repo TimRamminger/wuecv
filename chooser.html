@@ -9,12 +9,13 @@
 
     
 </head>
-<body  class="chooser">
-        <header>
+<body  class="chooser">    
             
-            <a href="index.html">Home</a>
-            <form action="#">
-                
+        <main id="mainChooser">
+            <a href="index.html">
+                <img src="img/wuerfel/home_button.png">
+            </a>
+            <form action="#">  
                 <select id="playersPerGroup" name="playersPerGroup">
                     <option>1</option>
                     <option>2</option>
@@ -38,10 +39,7 @@
                     <option>20</option>
                 </select>
             </form>
-        </header>
-        <main id="mainChooser">
             <canvas id="chooser" ></canvas>
-            
         </main>
 
         <script type="text/javascript" src="script_chooser.js"></script>

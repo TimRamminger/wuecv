@@ -20,9 +20,7 @@ var timeColorChange = 1000;
 var c = document.getElementById("chooser");
 var draw = c.getContext("2d");
 
-c.style.height = (window.innerHeight-50).toString()+"px";
-console.log(window.innerHeight);
-console.log(c.style.height);
+c.style.height = (window.innerHeight).toString()+"px";
 
 window.onLoad = start();
 
