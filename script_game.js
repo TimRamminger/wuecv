@@ -146,7 +146,7 @@ function showRadioButtons() {
     var ul = document.createElement("ul");
 
 
-    for (var i = 0;i<players.length;i++) {
+    for (var i = 0;i<=players.length;i++) {
         var li = document.createElement("li");
         var input = document.createElement("input");
         var label = document.createElement("label");

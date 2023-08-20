@@ -44,6 +44,8 @@ function drawCanvas() {
       draw.strokeStyle = "blue";
       draw.stroke();*/
   }
+
+  console.log(timerCalcGroups);
 }
 
 function updateMousePosOnMove(event) {
@@ -164,6 +166,11 @@ function removeCircle(event) {
     waitDel = false;
 }
 
+function choseOnePlayer() {
+    var currentCircle = circles[getRandom(0, circles.length-1)];
+    timerCalcGroups[timerCalcGroups.length] = setTimeout(setColor, timeColorChange, currentCircle, [getRandomColor()], 0);
+}
+
 function calcGroups() {
   //console.log(timerCalcGroups.length);
   //console.log(timerCalcGroups);
@@ -180,6 +187,11 @@ function calcGroups() {
   var colors = [];
   var playersPerGroup = document.getElementById("playersPerGroup").value;
   var numberOfGroups = Math.ceil(circles.length/playersPerGroup);
+
+  if(playersPerGroup==1) {
+    choseOnePlayer();
+    return;
+  }
 
   for(var i = 0;i<numberOfGroups;i++) {
     do {
