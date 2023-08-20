@@ -288,7 +288,7 @@
 
 .chooser main canvas {
     width: 100%;
-    height: 93.1vh;
+    /*height: 85vh;*/
 }
 
 .chooser form {

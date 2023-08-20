@@ -20,6 +20,10 @@ var timeColorChange = 1000;
 var c = document.getElementById("chooser");
 var draw = c.getContext("2d");
 
+c.style.height = (window.innerHeight-50).toString()+"px";
+console.log(window.innerHeight);
+console.log(c.style.height);
+
 window.onLoad = start();
 
 function start() {
@@ -44,8 +48,6 @@ function drawCanvas() {
       draw.strokeStyle = "blue";
       draw.stroke();*/
   }
-
-  console.log(timerCalcGroups);
 }
 
 function updateMousePosOnMove(event) {
