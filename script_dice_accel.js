@@ -6,6 +6,10 @@ window.addEventListener("devicemotion", handleMotion, true);
 
 document.getElementById("mainDice").style.height = (window.innerHeight-65).toString()+"px";
 
+let shakeThreshold = 15;
+let lastX, lastY, lastZ;
+let lastShakeTime = 0;
+
 
 function handleMotion(event) {
     const { x, y, z } = event.accelerationIncludingGravity;
