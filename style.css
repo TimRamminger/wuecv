@@ -1,18 +1,5 @@
-a.nav-link:link
-{
-    text-decoration: none;
-}
-a.nav-link:visited
-{
-    text-decoration: none;
-}
-a.nav-link:hover
-{
-    text-decoration: none;
-}
-a.nav-link:active
-{
-    text-decoration: none;
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -86,7 +73,7 @@ a.nav-link:active
     color: rgba(255, 255, 255, 0.774);
     text-align: center;
     font-size: 25px;
-    
+
 }
 
 ::placeholder {
@@ -136,7 +123,7 @@ a.nav-link:active
     user-select: none;
 }
 
- 
+
 .game header .score {
     position: absolute;
     right: 8%;
@@ -173,7 +160,7 @@ a.nav-link:active
     /*margin-top: 60%;*/
     text-align: center;
 }
- 
+
 
 .game footer {
     position: fixed;
@@ -215,7 +202,7 @@ a.nav-link:active
     border: 2px solid white;
     z-index: 90;
     color: white;
-    
+
 }
 
 .game footer label, .game footer input {
