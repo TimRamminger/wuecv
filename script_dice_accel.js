@@ -6,7 +6,7 @@ window.addEventListener("devicemotion", handleMotion, true);
 
 document.getElementById("mainDice").style.height = (window.innerHeight-65).toString()+"px";
 
-let shakeThreshold = 15;
+let shakeThreshold = 30;
 let lastX, lastY, lastZ;
 let lastShakeTime = 0;
 
