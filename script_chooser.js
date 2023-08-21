@@ -7,7 +7,8 @@ document.addEventListener("touchmove", updateMousePosOnMove);
 document.addEventListener("touchstart", updateMousePosOnStart);
 document.addEventListener("touchstart", calcGroups);
 document.addEventListener("touchend", stopTimerCalcGroups);
-document.addEventListener("touchcancel", testTouchCanel);
+document.addEventListener("touchcancel", removeCircle);
+document.addEventListener("touchcancel", stopTimerCalcGroups);
 
 var circles = [];
 var timerCalcGroups = [];
