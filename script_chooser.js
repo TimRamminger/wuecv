@@ -7,6 +7,7 @@ document.addEventListener("touchmove", updateMousePosOnMove);
 document.addEventListener("touchstart", updateMousePosOnStart);
 document.addEventListener("touchstart", calcGroups);
 document.addEventListener("touchend", stopTimerCalcGroups);
+document.addEventListener("touchcancel", testTouchCanel);
 
 var circles = [];
 var timerCalcGroups = [];
@@ -23,6 +24,10 @@ var draw = c.getContext("2d");
 c.style.height = (window.innerHeight).toString()+"px";
 
 window.onLoad = start();
+
+function testTouchCanel() {
+  console.log("cancled");
+}
 
 function start() {
     setInterval(drawCanvas, 1); //1, 10
@@ -46,6 +51,8 @@ function drawCanvas() {
       draw.strokeStyle = "blue";
       draw.stroke();*/
   }
+
+  console.log(circles);
 }
 
 function updateMousePosOnMove(event) {
