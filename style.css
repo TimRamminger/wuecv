@@ -1,3 +1,16 @@
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+
 .text {
     color: white;
 }
