@@ -58,7 +58,6 @@ a {
     width: 200px;
     height: 30px;
     border: 1px solid rgb(112, 106, 106);
-    border-radius: 10px;
     background: rgba(0, 0, 0, 0.432);
     color:rgba(255, 255, 255, 0.596);
     color:white;
@@ -66,7 +65,6 @@ a {
 
 
 .index div input {
-    border-radius: 20px;
     height: 40px;
     width: 300px;
     background: rgba(219, 216, 216, 0.164);
@@ -108,17 +106,17 @@ a {
     text-transform:uppercase;
     font-family:'Roboto',sans-serif;
     font-weight:400;
-    color:#000000;
+    color:#0000FF;
     text-align:center;
     transition: all 0.15s;
 }
 .container button:hover{
-    color:#0000FF;
-    border-color:#DDDDDD;
+    color:#800080;
+    border-color:#800080;
 }
 .container button:active{
-    color:#BBBBBB;
-    border-color:#BBBBBB;
+    color:#800080;
+    border-color:#800080;
 }
 .container @media all and (max-width:30em){
     .container button{
