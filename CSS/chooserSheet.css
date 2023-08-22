@@ -5,7 +5,7 @@ a {
 .chooser {
     text-align: center;
     margin: 0;
-    background-image: url('img/wuerfel/chooser_hintergrund.png');
+    background-image: url('../img/wuerfel/chooser_hintergrund.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;

@@ -4,7 +4,7 @@ a {
 
 .dice {
     text-align: center;
-    background-image: url('img/wuerfel/hintergrund_wurfel.png');
+    background-image: url('../img/wuerfel/hintergrund_wurfel.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;

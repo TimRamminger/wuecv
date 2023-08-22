@@ -12,7 +12,7 @@ a {
 
 .index {
     text-align: center;
-    background-image: url('img/wuerfel/hinergrund_hauptmenu.png');
+    background-image: url('../img/wuerfel/hinergrund_hauptmenu.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;

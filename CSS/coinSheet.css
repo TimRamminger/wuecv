@@ -4,7 +4,7 @@ a {
 
 .coinFlip {
     text-align: center;
-    background-image: url('img/wuerfel/hintergrund_wurfel.png');
+    background-image: url('../img/wuerfel/hintergrund_wurfel.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -64,7 +64,7 @@ a {
 }
 
 .heads{
-    background-image: url(img/2_euro_coin_Eu_serie_1.png);
+    background-image: url(../img/2_euro_coin_Eu_serie_1.png);
 }
 
 .animate-heads{
@@ -82,7 +82,7 @@ a {
 }
 
 .tails{
-    background-image: url(img/2_euro_coin_De_serie_1a.png);
+    background-image: url(../img/2_euro_coin_De_serie_1a.png);
     transform: rotateY(-180deg);
 }
 
