@@ -361,23 +361,6 @@ a {
 }
 
 
-
-.coinFlip main {
-    text-align: center;
-    align-items: center;
-}
-
-
-
-.coinFlip main div {
-    padding-top: 70%;
-}
-
-.coinFlip img {
-    width: 100px;
-    margin: 10px;
-}
-
 .coinFlip header {
     top: 0;
     height: 65px;
@@ -401,45 +384,20 @@ a {
     top: 3%;
 }
 
-.coinFlip label {
-    color:white;
-}
-
-.coinFlip form select {
-    height: 40px;
-    width: 50px;
-    padding-top: 0px;
-    font-size: 30px;
-    background: none;
-    border-radius: 10px;
-    color: white;
-
-}
-
-.coinFlip form select option {
-    color: black;
-    border-radius: 10px;
-}
-
-
-.coinFlip button {
-    width: 200px;
-    height: 30px;
-    border: 1px solid rgb(112, 106, 106);
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.432);
-    color:rgba(255, 255, 255, 0.596);
-    color:white;
-}
 
 
 #coin{
     position: relative;
     width: 15rem;
     height: 15rem;
-    margin: 10rem 4rem;
+    /*margin: 10rem 4rem;*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
     transform-style: preserve-3d;
+    text-align: center;
 }
+
 
 #coin div{
     width: 100%;
