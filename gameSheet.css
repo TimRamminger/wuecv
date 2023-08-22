@@ -1,0 +1,120 @@
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.game {
+    /*background-color: rgb(146, 189, 214);*/
+    text-align: center;
+    background-image: url('img/wuerfel/hintergrund_new_2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overscroll-behavior: contain ;
+    user-select: none;
+}
+
+.game main .task {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0px;
+    font-size: 35px;
+    margin: auto;
+    width: 90%;
+}
+
+.game header {
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    height: 100px;
+    user-select: none;
+}
+
+
+.game header .score {
+    position: absolute;
+    right: 8%;
+    top: 1.5%;
+}
+
+.game header .score .scoreLabel {
+    width: 90px;
+}
+
+.game header div .scoreCount {
+    color:white;
+    font-family: 'Cinzel', serif;
+    font-size: 35px;
+    text-shadow: -2px -2px 0 #720015, 2px -2px 0 #720015, -2px 2px 0 #720015, 2px 2px 0 #720015;
+}
+
+.game header a {
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    user-select: none;
+}
+
+
+.game header a img {
+    width: 115px;
+    height: 55px;
+}
+
+
+.game main {
+    align-items: center;
+    /*margin-top: 60%;*/
+    text-align: center;
+}
+
+
+.game footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.game footer ul {
+    padding: 0;
+    /*list-style-type: none;*/
+}
+
+.game footer li {
+    float: left;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.game footer li input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 100;
+}
+
+.game footer label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid white;
+    z-index: 90;
+    color: white;
+
+}
+
+.game footer label, .game footer input {
+    border-radius: 12px;
+    padding-top: 10px;
+    font-size: 25px;
+}

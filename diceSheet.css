@@ -1,0 +1,77 @@
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.dice {
+    text-align: center;
+    background-image: url('img/wuerfel/hintergrund_wurfel.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overscroll-behavior: contain ;
+    user-select: none;
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+
+
+.dice main {
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.dice main div {
+    padding-top: 70%;
+}
+
+.dice img {
+    width: 100px;
+    margin: 10px;
+}
+
+.dice header {
+    top: 0;
+    height: 65px;
+}
+
+.dice header a {
+    position: absolute;
+    left: 5%;
+    top: 1%;
+}
+
+.dice header a img {
+    width: 115px;
+    height: 55px;
+}
+
+.dice header form {
+    position: absolute;
+    font-size: 30px;
+    right: 6%;
+    top: 3%;
+}
+
+.dice label {
+    color:white;
+}
+
+.dice form select {
+    height: 40px;
+    width: 50px;
+    padding-top: 0px;
+    font-size: 30px;
+    background: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.dice form select option {
+    color: black;
+    border-radius: 10px;
+}

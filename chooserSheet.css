@@ -1,0 +1,57 @@
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.chooser {
+    text-align: center;
+    margin: 0;
+    background-image: url('img/wuerfel/chooser_hintergrund.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overscroll-behavior: contain ;
+    user-select: none;
+    position: fixed;
+}
+
+.chooser main a {
+    position: absolute;
+    left: 9%;
+    top: 2%;
+}
+
+.chooser main a img {
+    width: 115px;
+    height: 55px;
+}
+
+.chooser main form {
+    position: absolute;
+    font-size: 30px;
+    right: 6%;
+    top: 3%;
+}
+
+.chooser main canvas {
+    width: 100%;
+}
+
+.chooser label {
+    color:white;
+}
+
+.chooser form select {
+    height: 40px;
+    width: 50px;
+    padding-top: 0px;
+    font-size: 30px;
+    background: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.chooser form select option {
+    color: black;
+    border-radius: 10px;
+}
