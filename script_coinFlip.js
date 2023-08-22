@@ -1,5 +1,4 @@
 const coin = document.querySelector('#coin');
-const button = document.querySelector('#flip');
 const status = document.querySelector('#status');
 
 function deferFn(callback, ms){
@@ -20,4 +19,4 @@ function flipCoin(){
     }, 100);
 }
 
-button.addEventListener('click', flipCoin)
+document.addEventListener("touchstart", flipCoin);
