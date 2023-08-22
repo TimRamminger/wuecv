@@ -83,7 +83,7 @@ a {
     text-align: center;
 }
 
-.index .startGame , .index .startDice, .index .startChooser {
+.index .startGame , .index .startDice, .index .startChooser, .index .startCoinFlip {
     margin-top: 10%;
     margin-left: 20%;
     display: flex;
@@ -345,6 +345,148 @@ a {
     border-radius: 10px;
 }
 
+/* coinFlip */
+
+.coinFlip {
+    text-align: center;
+    background-image: url('img/wuerfel/hintergrund_wurfel.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    overscroll-behavior: contain ;
+    user-select: none;
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+
+
+.coinFlip main {
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.coinFlip main div {
+    padding-top: 70%;
+}
+
+.coinFlip img {
+    width: 100px;
+    margin: 10px;
+}
+
+.coinFlip header {
+    top: 0;
+    height: 65px;
+}
+
+.coinFlip header a {
+    position: absolute;
+    left: 5%;
+    top: 1%;
+}
+
+.coinFlip header a img {
+    width: 115px;
+    height: 55px;
+}
+
+.coinFlip header form {
+    position: absolute;
+    font-size: 30px;
+    right: 6%;
+    top: 3%;
+}
+
+.coinFlip label {
+    color:white;
+}
+
+.coinFlip form select {
+    height: 40px;
+    width: 50px;
+    padding-top: 0px;
+    font-size: 30px;
+    background: none;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.coinFlip form select option {
+    color: black;
+    border-radius: 10px;
+}
+
+
+.coinFlip button {
+    width: 200px;
+    height: 30px;
+    border: 1px solid rgb(112, 106, 106);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.432);
+    color:rgba(255, 255, 255, 0.596);
+    color:white;
+}
+
+
+#coin{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    margin: 10rem 4rem;
+    transform-style: preserve-3d;
+}
+
+#coin div{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    background-size: contain;
+    position: absolute;
+}
+
+.heads{
+    background-image: url(img/2_euro_coin_Eu_serie_1.png);
+}
+
+.animate-heads{
+    animation: flipHeads 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(1800deg);
+    }
+}
+
+.tails{
+    background-image: url(img/2_euro_coin_De_serie_1a.png);
+    transform: rotateY(-180deg);
+}
+
+.animate-tails{
+    animation: flipTails 3s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes flipTails {
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(1620deg);
+    }
+}
 
 
 
