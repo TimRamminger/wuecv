@@ -191,6 +191,7 @@ function calcGroups() {
   timerCalcGroups.length = 0;
 
   for(var i = 0;i<circles.length;i++) {
+      circles[i].color = "#FFFFFF";
       circles[i].colorChanged = false;
   }
 
