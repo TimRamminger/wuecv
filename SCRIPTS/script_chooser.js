@@ -11,6 +11,7 @@ document.addEventListener("touchcancel", removeCircle);
 document.addEventListener("touchcancel", stopTimerCalcGroups);
 
 var circles = [];
+var circlesCache = [];
 var timerCalcGroups = [];
 const radiusStart = 60;
 const radiusDif = 10;
@@ -218,7 +219,10 @@ function calcGroups() {
   for(var i = 0;i<numberOfGroups;i++) {
       var currentCircle;
       for(var j = 0;j<playersPerGroup;j++) {
-        if(allColorsChanged()) return;
+        if(allColorsChanged()) {
+          console.log("all colors changed");
+          return;
+        }
         do {
             currentCircle = circles[getRandom(0,circles.length-1)];
             //console.log("lollel");
