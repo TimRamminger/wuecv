@@ -23,6 +23,8 @@ var c = document.getElementById("chooser");
 var draw = c.getContext("2d");
 
 c.style.height = (window.innerHeight).toString()+"px";
+c.height = window.innerHeight;
+c.width = window.innerWidth;
 
 window.onLoad = start();
 
@@ -45,7 +47,7 @@ function drawCanvas() {
   for (var i = 0;i<circles.length;i++) {
     draw.fillStyle = "#"+circles[i].color;
     draw.beginPath();
-    draw.ellipse(circles[i].x, circles[i].y, circles[i].radius*(c.width/c.getBoundingClientRect().width),circles[i].radius*(c.height/c.getBoundingClientRect().height), 0, 0, 2*Math.PI);
+    draw.ellipse(circles[i].x, circles[i].y, circles[i].radius,circles[i].radius, 0, 0, 2*Math.PI);
     draw.fill();
     draw.globalCompositeOperation = "source-over";
       /*draw.lineWidth = 1;
@@ -53,7 +55,7 @@ function drawCanvas() {
       draw.stroke();*/
   }
 
-  console.log(circles);
+  //console.log(circles);
 }
 
 function updateMousePosOnMove(event) {
