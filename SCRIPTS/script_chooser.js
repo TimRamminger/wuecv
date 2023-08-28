@@ -40,11 +40,7 @@ function start() {
 
 function drawCanvas() {
   draw.globalCompositeOperation = "copy";
-  if(circles.length==0) {
-      draw.beginPath();
-      draw.rect(0,0,0,0);
-      draw.fill();
-  }
+  
   for (var i = 0;i<circles.length;i++) {
     draw.fillStyle = "#"+circles[i].color;
     draw.beginPath();
@@ -191,6 +187,8 @@ function calcGroups() {
   }
   timerCalcGroups.length = 0;
 
+  //circlesCache.length = 0;
+
   for(var i = 0;i<circles.length;i++) {
       circles[i].color = "FFFFFF";
       circles[i].colorChanged = false;
@@ -220,7 +218,7 @@ function calcGroups() {
       var currentCircle;
       for(var j = 0;j<playersPerGroup;j++) {
         if(allColorsChanged()) {
-          console.log("all colors changed");
+          //circlesCache = circles.clone();
           return;
         }
         do {
