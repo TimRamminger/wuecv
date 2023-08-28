@@ -7,6 +7,7 @@ document.addEventListener("touchmove", updateMousePosOnMove);
 document.addEventListener("touchstart", updateMousePosOnStart);
 document.addEventListener("touchstart", calcGroups);
 document.addEventListener("touchend", stopTimerCalcGroups);
+document.addEventListener("touchend", stopTimerColorsChanged);
 //document.addEventListener("touchcancel", removeCircle);
 //document.addEventListener("touchcancel", stopTimerCalcGroups);
 
@@ -19,6 +20,8 @@ var touchesOld;
 var waitAdd = false;
 var waitDel = false;
 var timeColorChange = 1000;
+var timerColorsChanged;
+var changed = false;
 
 var c = document.getElementById("chooser");
 var draw = c.getContext("2d");
@@ -44,8 +47,6 @@ function drawCanvas() {
     draw.beginPath();
     draw.rect(0,0,0.00001,0.00001);
     draw.fill();
-
-    if(circlesCache.length==0) {
     
     for (var i = 0;i<circles.length;i++) {
       draw.fillStyle = "#"+circles[i].color;
@@ -57,21 +58,16 @@ function drawCanvas() {
         draw.strokeStyle = "blue";
         draw.stroke();*/
     }
-  }
-  else {
-    for (var i = 0;i<circlesCache.length;i++) {
-      draw.fillStyle = "#"+circlesCache[i].color;
-      draw.beginPath();
-      draw.ellipse(circlesCache[i].x, circlesCache[i].y, circlesCache[i].radius,circlesCache[i].radius, 0, 0, 2*Math.PI);
-      draw.fill();
-      draw.globalCompositeOperation = "source-over";
-        /*draw.lineWidth = 1;
-        draw.strokeStyle = "blue";
-        draw.stroke();*/
-    }
-  }
 
   //console.log(circles);
+}
+
+function drawCirclesCache() {
+  console.log("circles cached");
+  circlesCache = circles.slice();
+  circles.length = 0;
+  circles = circlesCache.slice();
+  changed = true;
 }
 
 function updateMousePosOnMove(event) {
@@ -125,6 +121,10 @@ function test3(event) {
   console.log(event.touches);
 }
 
+function stopTimerColorsChanged() {
+    clearTimeout(timerColorsChanged);
+}
+
 function addCircle(event) {
   while(waitAdd) {
 
@@ -133,6 +133,11 @@ function addCircle(event) {
 
   }
   waitAdd = true;
+  if(changed) {
+    console.log("changed set to false");
+    circles.length = 0;
+    changed = false;
+  }
   touchesOld = event.touches;
   circle = new Cirle(event.touches[event.touches.length-1].identifier, radiusStart,"FFFFFF", true);
 
@@ -206,7 +211,7 @@ function calcGroups() {
   }
   timerCalcGroups.length = 0;
 
-  circlesCache.length = 0;
+  clearTimeout(timerColorsChanged);
 
   for(var i = 0;i<circles.length;i++) {
       circles[i].color = "FFFFFF";
@@ -232,13 +237,13 @@ function calcGroups() {
   if(circles.length<playersPerGroup) {
     return;
   }
+
+  timerColorsChanged = setTimeout(drawCirclesCache, timeColorChange*circles.length+1);
   
   for(var i = 0;i<numberOfGroups;i++) {
       var currentCircle;
       for(var j = 0;j<playersPerGroup;j++) {
         if(allColorsChanged()) {
-          circlesCache = circles.clone();
-          circles.length = 0;
           console.log("testfdsn");
           return;
         }
@@ -253,6 +258,8 @@ function calcGroups() {
         timerCalcGroups[timerCalcGroups.length] = setTimeout(setColor, timeColorChange*(i*playersPerGroup+j+1), currentCircle, colors, i);
       }
   }
+
+  
 }
 
 function allColorsChanged() {
