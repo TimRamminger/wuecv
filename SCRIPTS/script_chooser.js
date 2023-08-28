@@ -7,8 +7,8 @@ document.addEventListener("touchmove", updateMousePosOnMove);
 document.addEventListener("touchstart", updateMousePosOnStart);
 document.addEventListener("touchstart", calcGroups);
 document.addEventListener("touchend", stopTimerCalcGroups);
-document.addEventListener("touchcancel", removeCircle);
-document.addEventListener("touchcancel", stopTimerCalcGroups);
+//document.addEventListener("touchcancel", removeCircle);
+//document.addEventListener("touchcancel", stopTimerCalcGroups);
 
 var circles = [];
 var circlesCache = [];
@@ -40,16 +40,35 @@ function start() {
 
 function drawCanvas() {
   draw.globalCompositeOperation = "copy";
-  
-  for (var i = 0;i<circles.length;i++) {
-    draw.fillStyle = "#"+circles[i].color;
+    
     draw.beginPath();
-    draw.ellipse(circles[i].x, circles[i].y, circles[i].radius,circles[i].radius, 0, 0, 2*Math.PI);
+    draw.rect(0,0,0.00001,0.00001);
     draw.fill();
-    draw.globalCompositeOperation = "source-over";
-      /*draw.lineWidth = 1;
-      draw.strokeStyle = "blue";
-      draw.stroke();*/
+
+    if(circlesCache.length==0) {
+    
+    for (var i = 0;i<circles.length;i++) {
+      draw.fillStyle = "#"+circles[i].color;
+      draw.beginPath();
+      draw.ellipse(circles[i].x, circles[i].y, circles[i].radius,circles[i].radius, 0, 0, 2*Math.PI);
+      draw.fill();
+      draw.globalCompositeOperation = "source-over";
+        /*draw.lineWidth = 1;
+        draw.strokeStyle = "blue";
+        draw.stroke();*/
+    }
+  }
+  else {
+    for (var i = 0;i<circlesCache.length;i++) {
+      draw.fillStyle = "#"+circlesCache[i].color;
+      draw.beginPath();
+      draw.ellipse(circlesCache[i].x, circlesCache[i].y, circlesCache[i].radius,circlesCache[i].radius, 0, 0, 2*Math.PI);
+      draw.fill();
+      draw.globalCompositeOperation = "source-over";
+        /*draw.lineWidth = 1;
+        draw.strokeStyle = "blue";
+        draw.stroke();*/
+    }
   }
 
   //console.log(circles);
@@ -187,7 +206,7 @@ function calcGroups() {
   }
   timerCalcGroups.length = 0;
 
-  //circlesCache.length = 0;
+  circlesCache.length = 0;
 
   for(var i = 0;i<circles.length;i++) {
       circles[i].color = "FFFFFF";
@@ -218,7 +237,9 @@ function calcGroups() {
       var currentCircle;
       for(var j = 0;j<playersPerGroup;j++) {
         if(allColorsChanged()) {
-          //circlesCache = circles.clone();
+          circlesCache = circles.clone();
+          circles.length = 0;
+          console.log("testfdsn");
           return;
         }
         do {
