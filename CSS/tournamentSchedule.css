@@ -1,0 +1,33 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#teams {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+#teams input {
+    margin-right: 10px;
+}
+
+#schedule {
+    margin-top: 20px;
+}
+
+#schedule table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#schedule th, #schedule td {
+    border: 1px solid #333;
+    padding: 10px;
+}
