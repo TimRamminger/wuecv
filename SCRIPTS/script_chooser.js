@@ -68,7 +68,10 @@ function drawCirclesCache() {
 }
 
 function updateMousePosOnMove(event) {
-    updateMousePos(event);
+    if(!changed) {
+      updateMousePos(event);
+    }
+
 }
 
 function updateMousePosOnStart(event) {
@@ -223,10 +226,10 @@ function calcGroups() {
   var playersPerGroup = document.getElementById("playersPerGroup").value;
   var numberOfGroups = Math.ceil(circles.length/playersPerGroup);
 
-  /*if(playersPerGroup==1) {
+  if(playersPerGroup==1) {
     choseOnePlayer();
     return;
-  }*/
+  }
 
   for(var i = 0;i<numberOfGroups;i++) {
     do {
