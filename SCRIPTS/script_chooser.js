@@ -37,7 +37,7 @@ function testTouchCanel() {
 }
 
 function start() {
-    setInterval(drawCanvas, 1); //1, 10
+    setInterval(drawCanvas, 16); //1, 10
     setInterval(changeSize,50);
 }
 
@@ -54,16 +54,12 @@ function drawCanvas() {
       draw.ellipse(circles[i].x, circles[i].y, circles[i].radius,circles[i].radius, 0, 0, 2*Math.PI);
       draw.fill();
       draw.globalCompositeOperation = "source-over";
-        /*draw.lineWidth = 1;
-        draw.strokeStyle = "blue";
-        draw.stroke();*/
     }
 
   //console.log(circles);
 }
 
 function drawCirclesCache() {
-  console.log("circles cached");
   changed = true;
 }
 
@@ -71,7 +67,6 @@ function updateMousePosOnMove(event) {
     if(!changed) {
       updateMousePos(event);
     }
-
 }
 
 function updateMousePosOnStart(event) {
