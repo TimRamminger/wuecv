@@ -221,10 +221,11 @@ function calcGroups() {
   var playersPerGroup = document.getElementById("playersPerGroup").value;
   var numberOfGroups = Math.ceil(circles.length/playersPerGroup);
 
-  timerColorsChanged = setTimeout(drawCirclesCache, timeColorChange*circles.length+1);
 
   if(playersPerGroup==1) {
+    timerColorsChanged = setTimeout(drawCirclesCache, timeColorChange+1);
     choseOnePlayer();
+
     return;
   }
 
@@ -239,7 +240,7 @@ function calcGroups() {
     return;
   }
 
-  
+  timerColorsChanged = setTimeout(drawCirclesCache, timeColorChange*circles.length+1);
   
   for(var i = 0;i<numberOfGroups;i++) {
       var currentCircle;
