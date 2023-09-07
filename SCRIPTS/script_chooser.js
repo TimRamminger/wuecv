@@ -64,9 +64,6 @@ function drawCanvas() {
 
 function drawCirclesCache() {
   console.log("circles cached");
-  circlesCache = circles.slice();
-  circles.length = 0;
-  circles = circlesCache.slice();
   changed = true;
 }
 
@@ -182,13 +179,16 @@ function removeCircle(event) {
 
     //console.log("id: "+id);
 
-
-    for(var i = 0;i<circles.length;i++) {
+    if(!changed) {
+      for(var i = 0;i<circles.length;i++) {
         if(circles[i].id==id) {
             //console.log("i: "+i);
             circles.splice(i,1);
         }
+      }
     }
+
+    
 
 
 
@@ -213,6 +213,7 @@ function calcGroups() {
 
   clearTimeout(timerColorsChanged);
 
+
   for(var i = 0;i<circles.length;i++) {
       circles[i].color = "FFFFFF";
       circles[i].colorChanged = false;
@@ -222,10 +223,10 @@ function calcGroups() {
   var playersPerGroup = document.getElementById("playersPerGroup").value;
   var numberOfGroups = Math.ceil(circles.length/playersPerGroup);
 
-  if(playersPerGroup==1) {
+  /*if(playersPerGroup==1) {
     choseOnePlayer();
     return;
-  }
+  }*/
 
   for(var i = 0;i<numberOfGroups;i++) {
     do {
