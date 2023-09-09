@@ -37,7 +37,7 @@ function testTouchCanel() {
 }
 
 function start() {
-    setInterval(drawCanvas, 1); //1, 10
+    setInterval(drawCanvas, 16); //1, 10
     setInterval(changeSize,50);
 }
 
@@ -54,24 +54,19 @@ function drawCanvas() {
       draw.ellipse(circles[i].x, circles[i].y, circles[i].radius,circles[i].radius, 0, 0, 2*Math.PI);
       draw.fill();
       draw.globalCompositeOperation = "source-over";
-        /*draw.lineWidth = 1;
-        draw.strokeStyle = "blue";
-        draw.stroke();*/
     }
 
   //console.log(circles);
 }
 
 function drawCirclesCache() {
-  console.log("circles cached");
-  circlesCache = circles.slice();
-  circles.length = 0;
-  circles = circlesCache.slice();
   changed = true;
 }
 
 function updateMousePosOnMove(event) {
-    updateMousePos(event);
+    if(!changed) {
+      updateMousePos(event);
+    }
 }
 
 function updateMousePosOnStart(event) {
@@ -182,13 +177,16 @@ function removeCircle(event) {
 
     //console.log("id: "+id);
 
-
-    for(var i = 0;i<circles.length;i++) {
+    if(!changed) {
+      for(var i = 0;i<circles.length;i++) {
         if(circles[i].id==id) {
             //console.log("i: "+i);
             circles.splice(i,1);
         }
+      }
     }
+
+    
 
 
 
@@ -213,6 +211,7 @@ function calcGroups() {
 
   clearTimeout(timerColorsChanged);
 
+
   for(var i = 0;i<circles.length;i++) {
       circles[i].color = "FFFFFF";
       circles[i].colorChanged = false;
@@ -222,8 +221,11 @@ function calcGroups() {
   var playersPerGroup = document.getElementById("playersPerGroup").value;
   var numberOfGroups = Math.ceil(circles.length/playersPerGroup);
 
+
   if(playersPerGroup==1) {
+    timerColorsChanged = setTimeout(drawCirclesCache, timeColorChange+1);
     choseOnePlayer();
+
     return;
   }
 
