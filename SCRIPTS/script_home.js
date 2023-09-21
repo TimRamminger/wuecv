@@ -2,6 +2,10 @@ var players = JSON.parse(localStorage.getItem("players")) || [];
 window.onload = onLoad();
 
 
+function timscock() {
+    console.log("hahahahahah");
+}
+
 function onLoad() {
     console.log("hehehehadsah");
     showElements(0);

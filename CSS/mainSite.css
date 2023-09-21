@@ -20,6 +20,17 @@ a {
     user-select: none;
 }
 
+
+.Timmy{
+    text-align: left;
+}
+p{
+    color: red;
+    border: 10
+    px solid black;
+
+}
+
 .index a {
     position: relative;
     text-align: center;
