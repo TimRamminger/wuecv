@@ -23,7 +23,7 @@ function loadJson() {
     var xhReq = new XMLHttpRequest();
     xhReq.open("GET","../JSON/tasks.json",false);
     xhReq.send(null);
-    var json = JSON.parse(xhReq.responseText)
+    var json = JSON.parse(xhReq.responseText);
     return json;
 }
 
