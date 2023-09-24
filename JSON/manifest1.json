@@ -9,7 +9,7 @@
     "start_url": "/index.html",
     "icons": [
       {
-        "src": "img/wuerfel/saufi_profilbild_sized.png",
+        "src": "../img/wuerfel/saufi_profilbild_sized.png",
         "sizes":"512x512",
         "type": "image/png",
         "purpose":"maskable any"

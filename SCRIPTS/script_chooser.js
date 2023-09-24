@@ -325,7 +325,7 @@ class Cirle {
     constructor(id, radius, color, smaller) {
         this.id = id;
         this.radius = radius;
-        this.color = color;
+        this.color = color; 
         this.x;
         this.y;
         this.smaller = smaller;
