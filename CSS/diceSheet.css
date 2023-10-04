@@ -12,7 +12,10 @@ a {
     user-select: none;
     margin-bottom: 0;
     margin-top: 0;
-
+    touch-action: none;
+    position: fixed;
+    width: 96%;
+    -webkit-user-select: none;
 }
 
 
@@ -40,7 +43,7 @@ a {
 
 .dice header a {
     position: absolute;
-    left: 5%;
+    left: 3%;
     top: 1%;
 }
 
@@ -52,7 +55,7 @@ a {
 .dice header form {
     position: absolute;
     font-size: 30px;
-    right: 6%;
+    right: 5%;
     top: 3%;
 }
 

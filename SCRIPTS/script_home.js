@@ -1,6 +1,11 @@
 var players = JSON.parse(localStorage.getItem("players")) || [];
 window.onload = onLoad();
 
+if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+        .then((reg) => console.log('service worker registered', reg))
+        .catch((err) => console.log('service worker not registered', err))
+}
 
 function onLoad() {
     console.log("hehehehadsah");

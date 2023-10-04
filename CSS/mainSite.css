@@ -18,6 +18,9 @@ a {
     background-size: 100% 100%;
     overscroll-behavior: contain ;
     user-select: none;
+    touch-action: none;
+    position: fixed;
+    -webkit-user-select: none;
 }
 
 .index a {
@@ -40,7 +43,7 @@ a {
 }
 
 .index .main {
-    margin-top: 150px;
+    margin-top: 125px;
 }
 
 .index div .add{
@@ -52,6 +55,12 @@ a {
     left: 20%;
     width: 200px;
     text-shadow: -2px -2px 0 #720015, 2px -2px 0 #720015, -2px 2px 0 #720015, 2px 2px 0 #720015;
+    overflow: auto;
+    height: 22vh;
+}
+
+.index .main .player::-webkit-scrollbar {
+   display: none;
 }
 
 .index .add button {
