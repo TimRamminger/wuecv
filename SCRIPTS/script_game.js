@@ -28,7 +28,80 @@ function loadJson() {
 }
 
 function onLoad() {
-    var data = loadJson();
+    var data = {
+        "tasksNoPlayer":[
+          {
+              "task":"Jeder der heute Abend schon gekotzt hat, muss trinken",
+              "toDrink":1
+          },
+          {
+            "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss § Schlücke trinken",
+            "toDrink":3
+          },
+          {
+            "task":"Jeder der mehr als zwei Sprachen sprechen kann, muss trinken",
+            "toDrink":1
+          },
+          {
+            "task":"Jeder der nicht Cedric Emanuel Weiss heißt, muss trinken",
+            "toDrink":1
+          },
+          {
+            "task":"Jeder der schonmal seine Schuhe verloren hat muss § Schlücke trinken",
+            "toDrink":3
+          },
+          {
+            "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss § Schlücke trinken",
+            "toDrink":3
+          },
+          {
+            "task":"Jüngster und Ältester Spieler trinkt",
+            "toDrink":1
+          },
+          {
+            "task":"Jeder der nicht an einer Uni ist, muss exen",
+            "toDrink":10
+          },
+          {
+            "task":"Jeder der schonmal im Zug betrunken eingeschlafen ist muss $ Schlücke trinken",
+            "toDrink":3
+          }
+        ],
+        "tasks1Player": [
+          {
+            "task":", du darfst eine neue Regel einführen",
+            "toDrink":0
+          },
+          {
+            "task":", deine Mitspieler haben 30 Sekunden, um dich zum Lachen zu bringen. Wenn sie es schaffen trinkst du, ansonsten trinken sie",
+            "toDrink":1
+          },
+          {
+            "task":"erzähl einen Witz, wenn keiner lacht trink",
+            "toDrink":1
+          },
+          {
+            "task":"trinkt ein Shot",
+            "toDrink":1
+          },
+          {
+            "task":"muss einen Trinkbuddy bestimmen",
+            "toDrink":0
+          },
+          {
+            "task":"muss auf ex trinken",
+            "toDrink":10
+          },
+          {
+            "task":"trinkt, einfach so weil er/sie so toll ist",
+            "toDrink":1
+          },
+          {
+            "task":"bestimmt eine Person die trinken muss",
+            "toDrink":1
+          }
+        ]
+      };
     console.log(data);
     tasksNoPlayer = data["tasksNoPlayer"];
     tasks1Player = data["tasks1Player"];
@@ -132,8 +205,9 @@ function removeRadioButtons(element) {
 }
 
 function onClick(element) {
-    console.log(mouseY);
-    if(mouseY>645) return;
+    var footerHeight = document.getElementById("footer").offsetHeight;
+    
+    if(mouseY>window.innerHeight-footerHeight-5) return;
     if(mouseX<180) {
         prevTask(element);
     }

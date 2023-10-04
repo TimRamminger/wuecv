@@ -44,6 +44,9 @@ a {
 
 .index .main {
     margin-top: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .index div .add{
@@ -51,11 +54,23 @@ a {
 }
 
 .index .main .player {
-    position: relative;
-    left: 20%;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    width: 85%;
     text-shadow: -2px -2px 0 #720015, 2px -2px 0 #720015, -2px 2px 0 #720015, 2px 2px 0 #720015;
     overflow: auto;
-    height: 22vh;
+    height: 20vh;
+}
+
+.index .main .player p {
+    color: white;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .index .main .player::-webkit-scrollbar {
