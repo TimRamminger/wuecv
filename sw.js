@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-beta.v1.1';
-const dynamicCacheName = 'site-dynamic-beta.v1.1';
+const staticCacheName = 'site-static-beta.v1.2';
+const dynamicCacheName = 'site-dynamic-beta.v1.2';
 const assets = [
     'index.html', 'SCRIPTS/script_home.js', 'CSS/mainSite.css', 'JSON/manifest1.json', 'img/wuerfel/hinergrund_hauptmenu.png',
     'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap', 
