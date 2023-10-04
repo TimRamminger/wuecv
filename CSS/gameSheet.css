@@ -33,12 +33,13 @@ a {
     margin-bottom: 100px;
     height: 100px;
     user-select: none;
+    position: relative;
 }
 
 
 .game header .score {
     position: absolute;
-    right: 6.5%;
+    right: 7%;
     top: 1.5%;
 }
 
@@ -56,7 +57,7 @@ a {
 .game header a {
     position: absolute;
     left: 3%;
-    top: 7%;
+    top: 14%;
     user-select: none;
 }
 
