@@ -1,8 +1,8 @@
 {
     "name": "Saufi Saufi",
     "short_name": "Saufi",
-    "theme_color": "#2196f3",
-    "background_color": "#2196f3",
+    "theme_color": "#000000",
+    "background_color": "#000000",
     "display": "fullscreen",
     "orientation": "portrait",
     "scope": "/",

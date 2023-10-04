@@ -1,12 +1,12 @@
-const staticCacheName = 'site-static-v1';
-const dynamicCacheName = 'site-dynamic-v1';
+const staticCacheName = 'site-static-beta.v1.1';
+const dynamicCacheName = 'site-dynamic-beta.v1.1';
 const assets = [
     'index.html', 'SCRIPTS/script_home.js', 'CSS/mainSite.css', 'JSON/manifest1.json', 'img/wuerfel/hinergrund_hauptmenu.png',
     'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap', 
     'img/wuerfel/saufi_profilbild_sized.png', 'img/wuerfel/1.png', 'img/wuerfel/2.png', 'img/wuerfel/3.png', 'img/wuerfel/4.png',
     'img/wuerfel/5.png', 'img/wuerfel/6.png'
 ];
-//
+
 self.addEventListener('install', evt => {
     console.log("service worker has been installed");
     evt.waitUntil(

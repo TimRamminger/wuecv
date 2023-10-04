@@ -11,6 +11,10 @@ a {
     background-size: 100% 100%;
     overscroll-behavior: contain ;
     user-select: none;
+    touch-action: none;
+    position: fixed;
+    width: 96%;
+    -webkit-user-select: none;
 }
 
 .game main .task {
@@ -34,7 +38,7 @@ a {
 
 .game header .score {
     position: absolute;
-    right: 8%;
+    right: 6.5%;
     top: 1.5%;
 }
 
@@ -51,8 +55,8 @@ a {
 
 .game header a {
     position: absolute;
-    left: 5%;
-    top: 3%;
+    left: 3%;
+    top: 7%;
     user-select: none;
 }
 

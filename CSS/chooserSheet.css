@@ -12,6 +12,8 @@ a {
     overscroll-behavior: contain ;
     user-select: none;
     position: fixed;
+    touch-action: none;
+    -webkit-user-select: none;
 }
 
 .chooser main a {
