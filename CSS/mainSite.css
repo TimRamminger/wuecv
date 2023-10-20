@@ -84,6 +84,7 @@ a {
     background: rgba(0, 0, 0, 0.432);
     color:rgba(255, 255, 255, 0.596);
     color:white;
+    border-radius: 5px;
 }
 
 
@@ -95,7 +96,14 @@ a {
     color: rgba(255, 255, 255, 0.774);
     text-align: center;
     font-size: 25px;
+    border-radius: 15px;
+}
 
+.index div input[type="search"]::-webkit-search-cancel-button,
+.index div input[type="search"]::-webkit-search-decoration,
+.index div input[type="search"]::-webkit-search-results-button,
+.index div input[type="search"]::-webkit-search-results-decoration {
+display: none;
 }
 
 ::placeholder {
