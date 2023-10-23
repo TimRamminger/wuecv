@@ -14,24 +14,26 @@ function onLoad() {
 
 function addPlayerOnEnter(element) {
     if(event.key=='Enter') {
-        addPlayer();
+        if(document.getElementById("input").value.length>22) {
+            alert("Name zu lang!");
+            return;
+        }
+        if(!document.getElementById("input").value =="") {
+            players.push(document.getElementById("input").value);
+      
+            console.log(players);
+    
+            saveData();
+            showElements(players.length-1);
+            document.getElementById("input").value = "";
+        }
     }
 }
 
-function addPlayer() {
-    if(document.getElementById("input").value.length>22) {
-        alert("Name zu lang!");
-        return;
-    }
-    if(!document.getElementById("input").value =="") {
-        players.push(document.getElementById("input").value);
-  
-        console.log(players);
-
-        saveData();
-        showElements(players.length-1);
-        document.getElementById("input").value = "";
-    }
+function removeAllPlayers() {
+    players.length = 0;
+    saveData();
+    document.getElementById("player").innerHTML = "";
 }
 
 function removePlayer(txt) {

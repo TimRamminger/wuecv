@@ -49,7 +49,7 @@ a {
     align-items: center;
 }
 
-.index div .add{
+.index div .removeAll{
     margin-top: 5%;
 }
 
@@ -77,7 +77,7 @@ a {
    display: none;
 }
 
-.index .add button {
+.index .removeAll button {
     width: 200px;
     height: 30px;
     border: 1px solid rgb(112, 106, 106);
